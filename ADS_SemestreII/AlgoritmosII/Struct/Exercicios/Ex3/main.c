@@ -19,11 +19,18 @@ int main(int argc, char *argv[]) {
 		printf("Digite os minutos: ");
 		scanf("%d", &VetorHora[i].minuto);
 		printf("Digite o segundo: ");
-		scanf("%d", &VetorHora[i].segundo;
+		scanf("%d", &VetorHora[i].segundo);
 	}
+	int indiceMaiorHoraio = 0;
+	int maiorHorario=VetorHora[0].hora*3600+VetorHora[0].minuto*60+VetorHora[0].minuto*60+VetorHora[0].segundo;
 	for(i=0;i<5;i++){
-		printf("Hora: %d", VetorHora[i].hora)
+		int temp = VetorHora[i].hora*3600+VetorHora[i].minuto*60+VetorHora[i].segundo;
+		if (temp > maiorHorario){
+			maiorHorario=temp;
+			indiceMaiorHoraio =i;
+		}
 	}
+	printf("Maior horario eh %d:%d:%d", VetorHora[indiceMaiorHoraio].hora,  VetorHora[indiceMaiorHoraio].minuto,  VetorHora[indiceMaiorHoraio].segundo);
 	
 	return 0;
 }
